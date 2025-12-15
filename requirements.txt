@@ -1,0 +1,36 @@
+# -------------------------------------------------
+# Core 🤗 libraries (used directly in the notebook)
+# -------------------------------------------------
+transformers          # WhisperProcessor, pipeline, GenerationConfig, …
+huggingface_hub       # snapshot_download, repo handling
+sentencepiece         # Tokenizer & model‑format utilities
+
+# -------------------------------------------------
+# Optimum + ONNX Runtime (CPU wheel – the notebook will later install the GPU wheel if needed)
+# -------------------------------------------------
+optimum[onnxruntime]  # Optimum wrapper + the CPU ONNX Runtime wheel
+
+# -------------------------------------------------
+# ONNX Runtime (CPU & GPU builds – the same version number)
+# -------------------------------------------------
+onnxruntime
+onnxruntime-gpu
+
+# If you want GPU acceleration you can install the GPU build manually:
+#   pip install onnxruntime-gpu
+# (the notebook installs the correct build automatically, but listing it here
+#  makes the file self‑contained for offline installs.)
+
+# -------------------------------------------------
+# PyTorch (only needed for the CUDA‑availability check)
+# -------------------------------------------------
+torch                  # CPU‑only or GPU‑enabled builds – pip will pull the right wheel
+
+# -------------------------------------------------
+# Optional – pin exact versions (uncomment & replace with numbers if you need a reproducible freeze)
+# -------------------------------------------------
+# transformers==4.44.0
+# huggingface_hub==0.24.0
+# optimum==1.22.0
+# onnxruntime==1.18.1          # or onnxruntime‑gpu==1.18.1 for GPU
+# torch==2.4.0
